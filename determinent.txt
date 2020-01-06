@@ -1,0 +1,64 @@
+行列式在 初等变换 消成 上三角形 的过程中,需要行首被消为零值之前的值.
+而我犯的错就是用了已经消为0的行首值,导致除了主元以下的元素成功改值外,其他元素都减去0,没有改变.
+
+     	int temp;
+            	if (col == pivot)
+            		temp = det[row][pivot];
+                det[row][col] =  det[row][col] - det[pivot][col] * (temp / det[pivot][pivot]);
+                
+
+
+
+
+double deter(int n, double det[n][n])
+{
+
+    int pivot, row, col;
+    double sum = 1.0;  //连乘sum初始化应为1而不是0
+    
+    
+    
+    int j, k;					//track array
+    for (j = 0; j < n; j++) {			
+    	for (k = 0; k < n; k++) {
+	    	printf("%4.0f", det[j][k]);
+	    }
+	    printf("\n");
+    }
+    printf("\n\n");
+    
+    
+    
+    for (pivot = 0; pivot < n - 1; pivot++) {      
+        
+        for (row = pivot + 1; row < n; row++) {
+            
+            for (col = pivot; col < n; col++) {
+            
+                det[row][col] =  det[row][col] - det[pivot][col] * (det[row][pivot] / det[pivot][pivot]);  //此步不完整,正确版见上
+                
+               
+			   
+			    int j, k;					//track array
+    			for (j = 0; j < n; j++) {			    
+    				for (k = 0; k < n; k++) {			
+	    				printf("%4.0f", det[j][k]);		
+	  		  	    }
+	  		  	    printf("\n");
+  		   	   }
+  		  	    printf("\n\n");
+        
+        
+        
+            }
+        }
+    }
+    
+    int i;
+    for ( i= 0; i < n; i++) {
+        sum *= det[i][i];
+    }
+
+    return sum;
+    
+}

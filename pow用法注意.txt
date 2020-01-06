@@ -1,0 +1,6 @@
+#include <math.h>
+
+double pow(double x, double y);
+
+pow(1 / 2, i);	//Wrong
+pow(0.5, i);	//Right

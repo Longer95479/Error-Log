@@ -1,0 +1,78 @@
+error: syntax error at end of input
+出错的原因可能是:最后少了大括号.
+
+当你把函数独立成一个文件时,在其他文件上使用这个函数前需要声明,
+如果多个文件都需要用到,则将这个函数的声明放在一个头文件里,
+再将这个头文件包含进需要用到这个函数的文件里 和 定义这个函数的文件里. (#include <***.h>,包含的一般都是头文件,而不是狭义的源文件.)
+详解见P354
+
+函数声明及定义没输入或者输出一定要加void,不能省略.
+
+将字符串数组初始化为空串: 1) char a[10] = "";
+		          2) char a[10] = {'\0'};
+		          3) char a[10]; str[10] = '0';
+1,2种方式是将数组a的所有元素初始化为'\10',而第3种方式是只将str数组的第一个元素初始化为'\0'
+所以,除非必要(即我们需要将str数组的所有元素都初始化为0的情况),我们都应该选择第3种方式来初始化数组.
+
+[Warning] D:\Longer\C PROGRAM\RPN\read_and_push.c:18: warning: passing arg 1 of `is_num' makes pointer from integer without a cast
+arg: 引数,参数，在计算机编程中常用。是argument的缩写。 
+
+c++经验总结(1):linux c 编译时出现warning: assignment makes pointer from integer without a cast原因
+1.未包含函数的头文件
+2.函数在被调用之前未作声明
+
+
+
+
+[Error] D:\Longer\C PROGRAM\RPN\read_and_push.c:9: error: parameter `input' is initialized
+
+[Warning] D:\Longer\C PROGRAM\RPN\read_and_push.c:18: warning: passing arg 1 of `is_num' makes pointer from integer without a cast
+
+
+
+
+--------------------配置: mingw5 - CUI Debug, 编译器类型: MinGW--------------------
+
+检查文件依赖性...
+正在编译 D:\Longer\C PROGRAM\RPN\stack.c...
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:41: warning: the address of `is_full', will always evaluate as `true'
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:42: warning: implicit declaration of function `stack_overflow'
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:50: warning: the address of `is_enpty', will always evaluate as `true'
+正在编译 D:\Longer\C PROGRAM\RPN\output.c...
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:41: warning: the address of `is_full', will always evaluate as `true'
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:42: warning: implicit declaration of function `stack_overflow'
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:50: warning: the address of `is_enpty', will always evaluate as `true'
+正在编译 D:\Longer\C PROGRAM\RPN\main.c...
+[Warning] D:\Longer\C PROGRAM\RPN\read_and_compute.c:15: warning: passing arg 1 of `is_num' makes pointer from integer without a cast
+[Warning] D:\Longer\C PROGRAM\RPN\read_and_compute.c:22: warning: implicit declaration of function `push'
+[Warning] D:\Longer\C PROGRAM\RPN\read_and_compute.c:26: warning: implicit declaration of function `pop'
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:41: warning: the address of `is_full', will always evaluate as `true'
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:42: warning: implicit declaration of function `stack_overflow'
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:50: warning: the address of `is_enpty', will always evaluate as `true'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:5: error: redeclaration of 'contents' with no linkage
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:5: error: previous declaration of 'contents' was here
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:6: error: redeclaration of 'top' with no linkage
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:6: error: previous declaration of 'top' was here
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:10: error: redefinition of 'make_empty'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:10: error: previous definition of 'make_empty' was here
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:16: error: redefinition of 'is_enpty'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:16: error: previous definition of 'is_enpty' was here
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:22: error: redefinition of 'is_full'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:22: error: previous definition of 'is_full' was here
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:28: error: redefinition of 'stack_over'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:28: error: previous definition of 'stack_over' was here
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:34: error: redefinition of 'stack_underflow'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:34: error: previous definition of 'stack_underflow' was here
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:40: error: redefinition of 'push'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:40: error: previous definition of 'push' was here
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:41: warning: the address of `is_full', will always evaluate as `true'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:49: error: redefinition of 'pop'
+[Error] D:\Longer\C PROGRAM\RPN\stack.c:49: error: previous definition of 'pop' was here
+[Warning] D:\Longer\C PROGRAM\RPN\stack.c:50: warning: the address of `is_enpty', will always evaluate as `true'
+[Error] D:\Longer\C PROGRAM\RPN\main.c:5: error: `max' undeclared (first use in this function)
+[Error] D:\Longer\C PROGRAM\RPN\main.c:5: error: (Each undeclared identifier is reported only once
+[Error] D:\Longer\C PROGRAM\RPN\main.c:5: error: for each function it appears in.)
+[Error] D:\Longer\C PROGRAM\RPN\main.c:20: error: syntax error at end of input
+
+构建中止 main: 22 个错误, 14 个警告
+
